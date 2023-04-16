@@ -56,11 +56,13 @@ import 'package:flutter/material.dart';
 import 'modal/post_model.dart';
 
 class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Posts'),
+        title: const Text('Posts'),
       ),
       body: FutureBuilder<List<Post>>(
         future: PostService.getPosts(),
@@ -90,7 +92,7 @@ class HomePage extends StatelessWidget {
               child: Text('Error: ${snapshot.error}'),
             );
           } else {
-            return Center(
+            return const Center(
               child: CircularProgressIndicator(),
             );
           }
